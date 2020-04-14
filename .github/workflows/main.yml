@@ -17,6 +17,6 @@ jobs:
       - name: update system
         run: sudo apt update
       - name: install libreries 
-        run: sudo apt install zlib1g-dev libsqlite3-dev - y
+        run: sudo apt install zlib1g-dev libsqlite3-dev -y
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
