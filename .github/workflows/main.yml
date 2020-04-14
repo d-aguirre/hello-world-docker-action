@@ -5,15 +5,11 @@ jobs:
     runs-on: ubuntu-latest
     name: A job to say hello
     steps:
-      # To use this repository's private action, you must check out the repository
-      - name: Checkout
-        uses: hello-world-docker-action/action.yml
-      - name: Hello world action step
-        uses: ./ # Uses an action in the root directory
-        id: hello
-        with:
-          dani: 'Mona the Octocat'
-      # Use the output from the `hello` step
-      - name: Get the output time
-        run: echo "The time was ${{ steps.hello.outputs.time }}"
-
+    - name: Hello world action step
+      id: hello
+      uses: hello-world-docker-action/action.yml@v1
+      with:
+        who-to-greet: 'Mona the Octocat'
+    # Use the output from the `hello` step
+    - name: Get the output time
+      run: echo "The time was ${{ steps.hello.outputs.time }}"
