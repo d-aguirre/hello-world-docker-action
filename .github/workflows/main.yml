@@ -1,4 +1,8 @@
-on: [push]
+#line to trigger action with git push
+on: 
+  push:
+    branches:
+      - develop
 
 jobs:
   hello_world_job:
